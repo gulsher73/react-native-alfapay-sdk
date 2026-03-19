@@ -5,7 +5,7 @@ React Native bridge for AlfaPay SDK. This package provides the JS-to-native brid
 ## Install
 
 ```bash
-npm install git+ssh://git@github.com:Code-Brew-AI/react-native-alfapay-sdk.git
+npm install git+ssh://git@github.com:gulsher73/react-native-alfapay-sdk.git
 ```
 
 ## Native SDK Setup (required)
