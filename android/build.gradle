@@ -39,5 +39,5 @@ android {
 
 dependencies {
     implementation "com.facebook.react:react-android:+"
-    compileOnly "ae.alfapay.sdk.module:flutter_release:1.0"
+    compileOnly "io.flutter:flutter_embedding_release:+"
 }

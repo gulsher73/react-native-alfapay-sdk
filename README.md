@@ -30,29 +30,36 @@ git submodule update --init
 
 ### 2.2 Add repositories
 
-`android/app/build.gradle` — add **before** the `android {` block:
+`android/build.gradle` (root level) — add an `allprojects` block after `buildscript`:
 
 ```groovy
-repositories {
-    // Flutter engine
-    maven { url "https://storage.googleapis.com/download.flutter.io" }
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
 
-    // AlfaPay SDK
-    maven { url "${rootProject.projectDir}/../alfapay-android-sdk/repo" }
+        // Flutter engine
+        maven { url "https://storage.googleapis.com/download.flutter.io" }
 
-    // Vendor AARs
-    flatDir { dirs "${rootProject.projectDir}/../alfapay-android-sdk/libs" }
+        // AlfaPay SDK
+        maven { url "${rootProject.projectDir}/../alfapay-android-sdk/repo" }
 
-    // PureLive (identity verification) — credentials provided by AlfaPay
-    maven {
-        url "https://pureliveefr.jfrog.io/artifactory/main"
-        credentials {
-            username "your_username"
-            password "your_password"
+        // Vendor AARs
+        flatDir { dirs "${rootProject.projectDir}/../alfapay-android-sdk/libs" }
+
+        // PureLive (identity verification) — credentials provided by AlfaPay
+        maven {
+            url "https://pureliveefr.jfrog.io/artifactory/main"
+            credentials {
+                username "your_username"
+                password "your_password"
+            }
         }
     }
 }
 ```
+
+> **Important:** These repositories must be in the **root** `build.gradle`, not in `app/build.gradle`. The SDK module needs access to these repos at compile time.
 
 ### 2.3 Add dependencies
 
@@ -231,7 +238,7 @@ launchAlfaPay({
 
 ### Android: `Failed to resolve: ae.alfapay.sdk.module:flutter_release:1.0`
 
-SDK repositories must be in `android/app/build.gradle` (not `settings.gradle`). React Native's Gradle plugin uses project-level repos.
+SDK repositories must be in the **root** `android/build.gradle` inside an `allprojects` block — not in `app/build.gradle` or `settings.gradle`. The SDK bridge module needs these repos to compile against the Flutter embedding.
 
 ### iOS: `No such module 'AlfaPaySDK'`
 
