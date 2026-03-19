@@ -34,7 +34,12 @@ This package only provides the bridge. You must add the native SDKs manually:
 
 1. Clone `alfapay-ios-sdk` alongside your project
 2. Open `.xcworkspace` in Xcode → **File > Add Package Dependencies** → add local `alfapay-ios-sdk`
-3. Add to `Info.plist`:
+3. Copy the bridge files from `node_modules/react-native-alfapay-sdk/ios/` into your Xcode project target:
+   - `AlfaPayModule.swift`
+   - `AlfaPayModule.m`
+
+   Right-click your app folder in Xcode → **Add Files to "YourApp"** → select both files → ensure **"Copy items if needed"** is checked and your app target is selected.
+4. Add to `Info.plist`:
    ```xml
    <key>NSCameraUsageDescription</key>
    <string>Camera is required for identity verification</string>
@@ -43,7 +48,7 @@ This package only provides the bridge. You must add the native SDKs manually:
    <key>NSPhotoLibraryUsageDescription</key>
    <string>Photo library access is needed for document upload</string>
    ```
-4. Run `cd ios && pod install`
+5. Run `cd ios && pod install`
 
 ## Usage
 
