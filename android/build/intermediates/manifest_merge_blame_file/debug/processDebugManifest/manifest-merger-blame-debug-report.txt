@@ -1,0 +1,25 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.alfapay.rn" >
+4
+5    <uses-sdk android:minSdkVersion="24" />
+6
+7    <application>
+7-->/Users/gulsher/Desktop/enterprise/alfapay/sdk_native_examples/AlfaPayRN/node_modules/react-native-alfapay-sdk/android/src/main/AndroidManifest.xml:4:5-12:19
+8        <activity
+8-->/Users/gulsher/Desktop/enterprise/alfapay/sdk_native_examples/AlfaPayRN/node_modules/react-native-alfapay-sdk/android/src/main/AndroidManifest.xml:5:9-11:58
+9            android:name="com.alfapay.rn.AlfaPaySdkActivity"
+9-->/Users/gulsher/Desktop/enterprise/alfapay/sdk_native_examples/AlfaPayRN/node_modules/react-native-alfapay-sdk/android/src/main/AndroidManifest.xml:6:13-47
+10            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+10-->/Users/gulsher/Desktop/enterprise/alfapay/sdk_native_examples/AlfaPayRN/node_modules/react-native-alfapay-sdk/android/src/main/AndroidManifest.xml:9:13-163
+11            android:exported="false"
+11-->/Users/gulsher/Desktop/enterprise/alfapay/sdk_native_examples/AlfaPayRN/node_modules/react-native-alfapay-sdk/android/src/main/AndroidManifest.xml:7:13-37
+12            android:hardwareAccelerated="true"
+12-->/Users/gulsher/Desktop/enterprise/alfapay/sdk_native_examples/AlfaPayRN/node_modules/react-native-alfapay-sdk/android/src/main/AndroidManifest.xml:10:13-47
+13            android:launchMode="singleTop"
+13-->/Users/gulsher/Desktop/enterprise/alfapay/sdk_native_examples/AlfaPayRN/node_modules/react-native-alfapay-sdk/android/src/main/AndroidManifest.xml:8:13-43
+14            android:windowSoftInputMode="adjustResize" />
+14-->/Users/gulsher/Desktop/enterprise/alfapay/sdk_native_examples/AlfaPayRN/node_modules/react-native-alfapay-sdk/android/src/main/AndroidManifest.xml:11:13-55
+15    </application>
+16
+17</manifest>

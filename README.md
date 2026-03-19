@@ -248,6 +248,29 @@ The bridge files (`AlfaPayModule.swift` + `.m`) must be in your **main app targe
 
 Missing Info.plist permissions. Add all three keys from Step 3.4.
 
+### Android: `Cannot run program "node"` in Android Studio
+
+This happens when Android Studio can't find `node` in its environment — common with **nvm** or **fnm** users since GUI apps don't inherit shell PATH.
+
+**Fix (pick one):**
+
+1. **Symlink node globally** (recommended):
+   ```bash
+   sudo ln -sf $(which node) /usr/local/bin/node
+   ```
+
+2. **Launch Android Studio from terminal** so it inherits your PATH:
+   ```bash
+   open -a "Android Studio"
+   ```
+
+3. **Add `node.dir` to `android/local.properties`:**
+   ```properties
+   node.dir=/path/to/your/node/bin
+   ```
+
+> After applying any fix, fully quit Android Studio (Cmd+Q) and reopen it.
+
 ### Android: `llvm-strip` error on `liboz_native.so`
 
 Harmless warning. Already handled by `android.stripNativeDebugSymbols=false` in Step 2.5.
